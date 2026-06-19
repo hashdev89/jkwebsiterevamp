@@ -1,0 +1,201 @@
+@font-face {
+  font-family: 'Eras Demi ITC';
+  src:
+    local('Eras Demi ITC'),
+    local('ErasDemiITC'),
+    local('eras_demi_itcregular'),
+    url('/fonts/Eras-Demi-ITC.woff2') format('woff2'),
+    url('/fonts/Eras-Demi-ITC.woff') format('woff'),
+    url('/fonts/Eras-Demi-ITC.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: 'Eras Demi ITC', sans-serif;
+  }
+  body {
+    @apply font-sans text-neutral-900 bg-white antialiased overflow-x-hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
+  }
+  p {
+    @apply text-base text-neutral-600 leading-relaxed font-sans;
+  }
+}
+@layer components {
+  .text-body-lg p {
+    @apply text-lg text-neutral-600 leading-relaxed;
+  }
+  .text-body-base p {
+    @apply text-base text-neutral-600 leading-relaxed;
+  }
+  .text-body-sm p {
+    @apply text-sm text-neutral-600 leading-relaxed;
+  }
+  .text-body-responsive p {
+    @apply text-base sm:text-lg text-neutral-600 leading-relaxed;
+  }
+  .hero-eyebrow p {
+    @apply text-white/80 text-xs sm:text-sm font-semibold uppercase tracking-[0.3em];
+  }
+  .hero-tagline p {
+    @apply text-white/90 text-sm sm:text-base md:text-lg font-medium tracking-widest uppercase;
+  }
+  .text-on-primary p {
+    @apply text-white/80 text-lg;
+  }
+  .footer-brand p {
+    @apply text-white/60 text-sm leading-relaxed;
+  }
+  .footer-newsletter p {
+    @apply text-white/60 text-sm;
+  }
+  .footer-copyright p {
+    @apply text-white/40 text-xs;
+  }
+  .feature-description p {
+    @apply text-xs text-white/80 leading-relaxed;
+  }
+  .text-label-xs p {
+    @apply text-[0.65rem] font-semibold uppercase tracking-widest text-neutral-500 px-2;
+  }
+  .text-label-sm p {
+    @apply text-xs font-semibold uppercase tracking-widest text-neutral-500;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white font-sans text-sm font-medium tracking-wide transition-colors hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+    border-radius: 10px;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-2.5 border border-neutral-900 text-neutral-900 font-sans text-sm font-medium tracking-wide transition-colors hover:bg-neutral-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2;
+    border-radius: 10px;
+  }
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center px-6 py-2.5 border border-white text-white font-sans text-sm font-medium tracking-wide transition-colors hover:bg-white hover:text-neutral-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+    border-radius: 10px;
+  }
+  .form-label {
+    @apply mb-2 block text-xs font-semibold uppercase tracking-widest text-neutral-900;
+  }
+  .form-input {
+    @apply w-full rounded-lg border border-neutral-200 bg-white px-4 py-2.5 text-sm text-neutral-900 transition-colors placeholder:text-neutral-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+  }
+  .glass-navbar-active {
+    position: relative;
+    isolation: isolate;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.96) 0%,
+        rgba(255, 255, 255, 0.94) 50%,
+        rgba(255, 255, 255, 0.95) 100%
+      );
+    -webkit-backdrop-filter: blur(120px) saturate(180%) brightness(1.04);
+    backdrop-filter: blur(120px) saturate(180%) brightness(1.04);
+    box-shadow:
+      0 10px 40px rgba(119, 60, 186, 0.08),
+      0 4px 16px rgba(0, 0, 0, 0.03),
+      inset 0 1px 0 rgba(255, 255, 255, 1);
+  }
+  .glass-navbar-active::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.35) 0%,
+      rgba(255, 255, 255, 0.12) 40%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+    pointer-events: none;
+  }
+  .glass-navbar-active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 8%;
+    right: 8%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.95) 50%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+  .glass-navbar-active > * {
+    position: relative;
+    z-index: 1;
+  }
+  .glass-mega-menu {
+    isolation: isolate;
+    overflow: hidden;
+    background:
+      linear-gradient(
+        168deg,
+        rgba(255, 255, 255, 0.82) 0%,
+        rgba(255, 255, 255, 0.68) 42%,
+        rgba(255, 255, 255, 0.74) 100%
+      );
+    -webkit-backdrop-filter: blur(10px) saturate(170%) brightness(1.03);
+    backdrop-filter: blur(10px) saturate(170%) brightness(1.03);
+    box-shadow:
+      0 24px 64px rgba(0, 0, 0, 0.14),
+      0 8px 24px rgba(0, 0, 0, 0.08),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+  }
+  .glass-mega-menu::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.12) 0%,
+        rgba(255, 255, 255, 0.08) 20%,
+        rgba(255, 255, 255, 0) 50%
+      ),
+      radial-gradient(
+        120% 80% at 50% 100%,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 60%
+      );
+    pointer-events: none;
+  }
+  .glass-mega-menu::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.22) 48%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .glass-mega-menu > * {
+    position: relative;
+    z-index: 1;
+  }
+  .mega-menu-overlay {
+    background: rgba(0, 0, 0, 0.55);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+}
